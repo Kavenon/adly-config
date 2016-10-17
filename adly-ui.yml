@@ -3,7 +3,7 @@ server:
 
 zuul:
   routes:
-    adly-auth-service:
+    adly-auth:
       path: /auth/**
       uri: http://localhost:9191/uaa
 
