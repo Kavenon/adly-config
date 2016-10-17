@@ -16,6 +16,7 @@ security:
             clientId: acme
             clientSecret: acmesecret
         resource:
+            userInfoUri: http://localhost:9191/uaa/user
             jwt:
                 keyValue: |
                 -----BEGIN PUBLIC KEY-----
