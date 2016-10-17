@@ -5,7 +5,7 @@ zuul:
   routes:
     adly-auth-service:
       path: /auth/**
-      serviceId: adly-auth
+      uri: http://localhost:9191/uaa
 
 security:
     ignored: /assets/**
