@@ -5,9 +5,3 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
-
-zuul:
-  routes:
-    adly-reservation-service:
-      path: /reservations/**
-      serviceId: adly-reservation-service
