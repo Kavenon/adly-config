@@ -1,10 +1,6 @@
 server:
   port: ${PORT:9999}
 
-zuul:
-  routes:
-    adly-auth-service: /auth/**
-
 security:
   oauth2:
     resource:
