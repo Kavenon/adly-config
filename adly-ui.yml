@@ -6,6 +6,9 @@ zuul:
     adly-edge:
       path: /resource/**
       serviceId: adly-edge
+    adly-auth:
+      path: /user/**
+      url: http://localhost:9191/uaa/user
 
 security:
   ignored: /assets/**
