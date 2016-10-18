@@ -18,4 +18,5 @@ security:
       userAuthorizationUri: http://localhost:9191/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
-
+    resource:
+      userInfoUri: http://localhost:9191/uaa/user
