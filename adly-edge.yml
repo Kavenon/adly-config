@@ -14,6 +14,3 @@ zuul:
       path: /beacon/**
       stripPrefix: false
       serviceId: adly-beacon-service
-    adly-reservation-service:
-      path: /reservations/**
-      serviceId: adly-reservation-service
