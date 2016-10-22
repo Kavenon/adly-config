@@ -1,6 +1,10 @@
 server:
   port: 8080
 
+spring:
+  aop:
+    proxy-target-class: true
+
 zuul:
   ignored-services: '*'
   routes:
