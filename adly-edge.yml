@@ -10,4 +10,9 @@ zuul:
   ignored-services: '*'
   ignoredPatterns: /**/api/**
   routes:
-    adly-beacon-service: /beacon/**
+    adly-beacon-service:
+      path: /beacon/**
+      stripPrefix: false
+      serviceId: adly-beacon-service
+
+
