@@ -13,4 +13,4 @@ zuul:
     adly-beacon-service:
       path: /beacon/**
       stripPrefix: false
-      serviceId: adly-beacon-service
+      serviceId: http://localhost:8100/beacon
