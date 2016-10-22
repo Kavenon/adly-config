@@ -13,9 +13,6 @@ zuul:
 
 security:
   ignored: /assets/**
-  user:
-    username: user
-    password: password
   oauth2:
     client:
       accessTokenUri: http://localhost:9191/uaa/oauth/token
