@@ -4,7 +4,7 @@ server:
 zuul:
   routes:
     adly-edge:
-      path: /resource/**
+      path: /api/**
       serviceId: adly-edge
     adly-auth:
       path: /user/**

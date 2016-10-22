@@ -1,0 +1,11 @@
+server:
+  port: ${PORT:8100}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/adly
+    username: adly
+    password: adly
+  jpa:
+    hibernate:
+      ddl-auto: update

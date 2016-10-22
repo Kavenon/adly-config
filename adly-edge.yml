@@ -5,3 +5,9 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
+
+zuul:
+  ignored-services: '*'
+  ignoredPatterns: /**/api/**
+  routes:
+    adly-beacon-service: /beacon/**
