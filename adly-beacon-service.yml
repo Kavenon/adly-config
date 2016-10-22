@@ -15,7 +15,3 @@ spring:
     hibernate:
       ddl-auto: update
 
-feign:
-  oauth2:
-    enabled: true
-
