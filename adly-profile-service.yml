@@ -16,5 +16,4 @@ spring:
       ddl-auto: update
 
 hibernate:
-  dialect:
-    pl.edu.agh.student.hibernate.JsonPostgreSQLDialect
+  dialect: pl.edu.agh.student.hibernate.JsonPostgreSQLDialect
