@@ -14,3 +14,7 @@ zuul:
       path: /beacon/**
       stripPrefix: false
       serviceId: http://localhost:8100
+    adly-profile-service:
+          path: /profile/**
+          stripPrefix: false
+          serviceId: http://localhost:8000
