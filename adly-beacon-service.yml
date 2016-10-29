@@ -15,10 +15,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-
-spring:
   data:
-    cassandra:
-      keyspace-name: adly
-      port: 9042
-      contact-points: localhost
+      cassandra:
+        keyspace-name: adly
+        port: 9042
+        contact-points: localhost
+
