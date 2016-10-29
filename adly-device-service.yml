@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:8000}
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9191/uaa/user
+
+spring:
+  data:
+    cassandra:
+      keyspace-name: adly
