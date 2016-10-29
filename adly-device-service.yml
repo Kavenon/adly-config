@@ -13,5 +13,11 @@ spring:
       keyspace-name: adly
       port: 9042
       contact-points: localhost
-
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: beacons
+          group: beacons-group
+          durableSubscription: true
 

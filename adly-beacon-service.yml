@@ -16,8 +16,12 @@ spring:
     hibernate:
       ddl-auto: update
   data:
-      cassandra:
-        keyspace-name: adly
-        port: 9042
-        contact-points: localhost
-
+    cassandra:
+      keyspace-name: adly
+      port: 9042
+      contact-points: localhost
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: beacons
