@@ -6,3 +6,10 @@ security:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
 
+spring:
+  data:
+    cassandra:
+      keyspace-name: adly
+      port: 9042
+      contact-points: localhost
+
