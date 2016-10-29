@@ -13,3 +13,5 @@ spring:
       port: 9042
       contact-points: localhost
 
+security:
+  ignored: /device/**
