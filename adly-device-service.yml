@@ -5,6 +5,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
+  ignored: /device/**
 
 spring:
   data:
@@ -13,5 +14,4 @@ spring:
       port: 9042
       contact-points: localhost
 
-security:
-  ignored: /device/**
+
