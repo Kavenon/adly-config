@@ -5,6 +5,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
+  ignored: /beacon/discover/**
 
 spring:
   datasource:
@@ -15,3 +16,9 @@ spring:
     hibernate:
       ddl-auto: update
 
+spring:
+  data:
+    cassandra:
+      keyspace-name: adly
+      port: 9042
+      contact-points: localhost
