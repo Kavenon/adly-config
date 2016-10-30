@@ -5,6 +5,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
+  ignored: /survey/response
 
 spring:
   datasource:
