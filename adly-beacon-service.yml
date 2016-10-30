@@ -26,3 +26,4 @@ spring:
         output:
           group: beacons-group
           destination: beacons
+          contentType: application/json
