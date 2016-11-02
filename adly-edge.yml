@@ -22,3 +22,7 @@ zuul:
           path: /device/**
           stripPrefix: false
           serviceId: http://localhost:8300
+    adly-rule-service:
+          path: /rule/**
+          stripPrefix: false
+          serviceId: http://localhost:8500
