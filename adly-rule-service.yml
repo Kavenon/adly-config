@@ -7,6 +7,13 @@ security:
       userInfoUri: http://localhost:9191/uaa/user
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/adly
+    username: adly
+    password: adly
+  jpa:
+    hibernate:
+      ddl-auto: update
   data:
     cassandra:
       keyspace-name: adly
