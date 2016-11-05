@@ -24,6 +24,6 @@ spring:
       bindings:
         input:
           destination: beacons.exchange
-          group: beacons-group
+          group: beacons-group2
           durableSubscription: true
 
