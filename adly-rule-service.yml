@@ -27,4 +27,7 @@ spring:
           destination: beacons.exchange
           group: beacons-rule
           durableSubscription: true
-
+        output:
+          destination: notifications
+          group: notifications-group
+          contentType: application/json
