@@ -24,5 +24,5 @@ spring:
     stream:
       bindings:
         output:
-          destination: fanout:beacons.exchange
+          destination: beacons.exchange
           contentType: application/json
