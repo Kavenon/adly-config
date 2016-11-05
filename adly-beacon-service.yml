@@ -24,6 +24,5 @@ spring:
     stream:
       bindings:
         output:
-#          group: beacons-group
           destination: beacons.exchange
           contentType: application/json
