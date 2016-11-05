@@ -17,7 +17,7 @@ spring:
     stream:
       bindings:
         input:
-          destination: beacons
+          destination: beacons.exchange
           group: beacons-group
           durableSubscription: true
 
