@@ -24,10 +24,6 @@ zuul:
           stripPrefix: false
           serviceId: http://localhost:8300
     adly-rule-service:
-          path: /rule/**
+          path: /notification/**
           stripPrefix: false
           serviceId: http://localhost:8500
-    adly-rule-service-another-path:
-            path: /notification/**
-            stripPrefix: false
-            serviceId: http://localhost:8500
