@@ -5,7 +5,6 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
-  ignored: /api/notification/**
 
 zuul:
   ignored-services: '*'
@@ -24,6 +23,6 @@ zuul:
           stripPrefix: false
           serviceId: http://localhost:8300
     adly-rule-service:
-          path: /notification/**
+          path: /notification/payload/**
           stripPrefix: false
           serviceId: http://localhost:8500
