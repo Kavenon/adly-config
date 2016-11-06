@@ -9,6 +9,11 @@ spring:
             destination: notifications
             group: notifications-group
             durableSubscription: true
+  data:
+    cassandra:
+      keyspace-name: adly
+      port: 9042
+      contact-points: localhost
 
 fcm:
   endpoint: gcm.googleapis.com
@@ -17,3 +22,4 @@ fcm:
     id: 42996188329
   api:
     key: AIzaSyCgHMhZMDZtJjuajw4kLu36_RgSED5GlKg
+
