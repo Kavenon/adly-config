@@ -5,7 +5,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
-  ignored: /rule/notification/**
+  ignored: /rule/notification/**,/device/register/**,/device/token/**,/survey/response/**,/beacon/discover/**
 
 zuul:
   ignored-services: '*'
