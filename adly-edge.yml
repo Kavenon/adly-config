@@ -18,12 +18,12 @@ zuul:
     adly-profile-service:
           path: /profile/**
           stripPrefix: false
-          serviceId: http://localhost:8000
+          serviceId: adly-profile-service
     adly-device-service:
           path: /device/**
           stripPrefix: false
-          serviceId: http://localhost:8300
+          serviceId: adly-device-service
     adly-rule-service:
           path: /rule/**
           stripPrefix: false
-          serviceId: http://localhost:8500
+          serviceId: adly-rule-service
