@@ -26,3 +26,7 @@ spring:
         output:
           destination: beacons.exchange
           contentType: application/json
+
+feign:
+  oauth2:
+    enabled: true
