@@ -1,0 +1,18 @@
+logging:
+    level:
+        org:
+            springframework:
+                security: DEBUG
+
+server:
+    contextPath: /uaa
+    port: 9191
+
+spring:
+    datasource:
+        password: adly
+        url: jdbc:postgresql://localhost:5432/adly
+        username: adly
+    jpa:
+        hibernate:
+            ddl-auto: update
