@@ -12,6 +12,6 @@ zuul:
       path: /api/**
       serviceId: adly-edge
     adly-auth:
-      path: /user/**
-      url: http://localhost:9191/uaa/user
+      path: /auth/**
+      url: http://localhost:9191/uaa/
 
