@@ -15,4 +15,4 @@ zuul:
       path: /uaa/**
       stripPrefix: false
       serviceId: adly-auth
-
+      sensitiveHeaders:
