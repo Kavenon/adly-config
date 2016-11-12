@@ -5,7 +5,13 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
-  ignored: /profile/survey/response,/profile/card/**,/profile/property/**,/profile/survey/client/**
+    client:
+      clientId: internal-service
+      clientSecret: internal-secret
+      accessTokenUri: http://localhost:9191/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+  ignored: /profile/survey/response
 
 spring:
   datasource:
