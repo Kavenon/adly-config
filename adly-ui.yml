@@ -11,6 +11,7 @@ zuul:
     adly-edge:
       path: /api/**
       serviceId: adly-edge
+      sensitiveHeaders:
     adly-auth:
       path: /uaa/**
       stripPrefix: false
