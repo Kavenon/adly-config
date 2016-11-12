@@ -11,7 +11,7 @@ security:
       accessTokenUri: http://localhost:9191/uaa/oauth/token
       grant-type: client_credentials
       scope: server
-  ignored: /beacon/discover/**,/beacon/info/**
+  ignored: /beacon/discover/**
 
 spring:
   datasource:
