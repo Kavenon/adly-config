@@ -3,12 +3,15 @@ server:
 
 security:
   oauth2:
+    resource:
+      userInfoUri: http://localhost:9191/uaa/user
     client:
       clientId: internal-service
       clientSecret: internal-secret
       accessTokenUri: http://adly-auth:9191/uaa/oauth/token
       grant-type: client_credentials
       scope: server
+  ignored: /beacon/discover/**,/beacon/info/**
 
 spring:
   datasource:
