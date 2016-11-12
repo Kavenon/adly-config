@@ -8,7 +8,7 @@ security:
     client:
       clientId: internal-service
       clientSecret: internal-secret
-      accessTokenUri: http://adly-auth:9191/uaa/oauth/token
+      accessTokenUri: http://localhost:9191/uaa/oauth/token
       grant-type: client_credentials
       scope: server
   ignored: /beacon/discover/**,/beacon/info/**
