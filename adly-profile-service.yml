@@ -11,7 +11,7 @@ security:
       accessTokenUri: http://localhost:9191/uaa/oauth/token
       grant-type: client_credentials
       scope: server
-  ignored: /profile/survey/response,/profile/survey/client/**
+  ignored: /profile/survey/**
 
 spring:
   datasource:
