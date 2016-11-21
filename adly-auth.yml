@@ -1,14 +1,17 @@
+spring:
+  profiles:
+    active: development
 logging:
     level:
         org:
             springframework:
                 security: DEBUG
-
 server:
     contextPath: /uaa
     port: 9191
-
+---
 spring:
+    profiles: development
     datasource:
         password: adly
         url: jdbc:postgresql://localhost:5432/adly
@@ -16,3 +19,13 @@ spring:
     jpa:
         hibernate:
             ddl-auto: update
+---
+spring:
+  profiles: docker
+  datasource:
+      password: adly
+      url: jdbc:postgresql://postgres:5432/adly
+      username: adly
+  jpa:
+      hibernate:
+          ddl-auto: update
