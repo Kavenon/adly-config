@@ -51,3 +51,7 @@ security:
       userInfoUri: http://${DOCKER_IP:192.168.99.100}:9191/uaa/user
     client:
       accessTokenUri: http://${DOCKER_IP:192.168.99.100}:9191/uaa/oauth/token
+eureka:
+   client:
+      serviceUrl:
+        defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
