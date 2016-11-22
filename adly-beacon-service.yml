@@ -39,12 +39,12 @@ security:
 spring:
   profiles: docker
   datasource:
-      password: adly
-      url: jdbc:postgresql://postgres:5432/adly
-      username: adly
+    password: adly
+    url: jdbc:postgresql://${DOCKER_IP:192.168.99.100}:5432/adly
+    username: adly
   jpa:
-      hibernate:
-          ddl-auto: update
+    hibernate:
+      ddl-auto: update
   data:
       cassandra:
         keyspace-name: adly
