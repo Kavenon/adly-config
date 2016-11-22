@@ -45,6 +45,11 @@ spring:
   jpa:
       hibernate:
           ddl-auto: update
+  data:
+      cassandra:
+        keyspace-name: adly
+        port: 9042
+        contact-points: ${DOCKER_IP:192.168.99.100}
 security:
   oauth2:
     resource:
