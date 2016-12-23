@@ -33,6 +33,6 @@ eureka:
       serviceUrl:
         defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
    instance:
-      preferIpAddress: true
+      prefer-ip-address: true
 
 
