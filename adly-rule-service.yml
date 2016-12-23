@@ -3,29 +3,67 @@ server:
 
 security:
   oauth2:
-    resource:
-      userInfoUri: http://localhost:9191/uaa/user
     client:
       clientId: internal-service
       clientSecret: internal-secret
-      accessTokenUri: http://localhost:9191/uaa/oauth/token
       grant-type: client_credentials
       scope: server
-  ignored: /rule/notification/payload/**
 
 spring:
+  profiles:
+    active: development
+
+---
+spring:
+  profiles: development
+   datasource:
+      url: jdbc:postgresql://localhost:5432/adly
+      username: adly
+      password: adly
+    jpa:
+      hibernate:
+        ddl-auto: update
+    data:
+      cassandra:
+        keyspace-name: adly
+        port: 9042
+        contact-points: localhost
+    cloud:
+      stream:
+        bindings:
+          input:
+            destination: beacons.exchange
+            group: beacons-rule
+            durableSubscription: true
+          output:
+            destination: notifications
+            group: notifications-group
+            contentType: application/json
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9191/uaa/user
+    client:
+      accessTokenUri: http://localhost:9191/uaa/oauth/token
+
+---
+spring:
+  profiles: docker
   datasource:
-    url: jdbc:postgresql://localhost:5432/adly
-    username: adly
     password: adly
+    url: jdbc:postgresql://${DOCKER_IP:192.168.99.100}:5432/adly
+    username: adly
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
   data:
     cassandra:
       keyspace-name: adly
       port: 9042
-      contact-points: localhost
+      contact-points: ${DOCKER_IP:192.168.99.100}
+  rabbitmq:
+    addresses: rabbit:5672
   cloud:
     stream:
       bindings:
@@ -37,3 +75,16 @@ spring:
           destination: notifications
           group: notifications-group
           contentType: application/json
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://${DOCKER_IP:192.168.99.100}:9191/uaa/user
+    client:
+      accessTokenUri: http://${DOCKER_IP:192.168.99.100}:9191/uaa/oauth/token
+eureka:
+   client:
+      serviceUrl:
+        defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
+   instance:
+      prefer-ip-address: true
+
