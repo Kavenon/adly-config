@@ -1,16 +1,6 @@
 server:
   port: 8080
 
-spring:
-  profiles:
-    active: development
-
----
-spring:
-  profiles: development
-  aop:
-    proxy-target-class: true
-
 zuul:
   ignored-services: '*'
   routes:
@@ -24,9 +14,21 @@ zuul:
       serviceId: adly-auth
       sensitiveHeaders:
 
+spring:
+  profiles:
+    active: development
+
+---
+spring:
+  profiles: development
+  aop:
+    proxy-target-class: true
+
 ---
 spring:
   profiles: docker
+  aop:
+    proxy-target-class: true
 eureka:
   instance:
     prefer-ip-address: true
