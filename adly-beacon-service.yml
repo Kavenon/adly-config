@@ -50,6 +50,8 @@ spring:
         keyspace-name: adly
         port: 9042
         contact-points: ${DOCKER_IP:192.168.99.100}
+  rabbitmq:
+      addresses: rabbit:5672
 security:
   oauth2:
     resource:
