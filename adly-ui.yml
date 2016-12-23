@@ -2,6 +2,12 @@ server:
   port: 8080
 
 spring:
+  profiles:
+    active: development
+
+---
+spring:
+  profiles: development
   aop:
     proxy-target-class: true
 
@@ -17,3 +23,15 @@ zuul:
       stripPrefix: false
       serviceId: adly-auth
       sensitiveHeaders:
+
+---
+spring:
+  profiles: docker
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+       defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
