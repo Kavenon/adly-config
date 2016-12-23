@@ -3,6 +3,9 @@ server:
 ---
 spring:
   profiles: docker
-    cloud:
-      config:
-        uri: http://adly-config-service:8010
+eureka:
+   client:
+      serviceUrl:
+        defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
+   instance:
+      prefer-ip-address: true
