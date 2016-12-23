@@ -1,8 +1,19 @@
 server:
   port: ${PORT:8100}
+
+security:
+  oauth2:
+    client:
+      clientId: internal-service
+      clientSecret: internal-secret
+      grant-type: client_credentials
+      scope: server
+  ignored: /beacon/discover/**
+
 spring:
   profiles:
     active: development
+
 ---
 spring:
   profiles: development
@@ -29,12 +40,7 @@ security:
     resource:
       userInfoUri: http://localhost:9191/uaa/user
     client:
-      clientId: internal-service
-      clientSecret: internal-secret
       accessTokenUri: http://localhost:9191/uaa/oauth/token
-      grant-type: client_credentials
-      scope: server
-  ignored: /beacon/discover/**
 ---
 spring:
   profiles: docker

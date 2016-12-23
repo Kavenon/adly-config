@@ -1,20 +1,21 @@
 server:
   port: ${PORT:8300}
 
-
 security:
   oauth2:
-    resource:
-      userInfoUri: http://localhost:9191/uaa/user
     client:
       clientId: internal-service
       clientSecret: internal-secret
-      accessTokenUri: http://localhost:9191/uaa/oauth/token
       grant-type: client_credentials
       scope: server
   ignored: /device/register,/device/token
 
 spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
   data:
     cassandra:
       keyspace-name: adly
@@ -27,4 +28,38 @@ spring:
           destination: beacons.exchange
           group: beacons-device
           durableSubscription: true
-
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9191/uaa/user
+    client:
+      accessTokenUri: http://localhost:9191/uaa/oauth/token
+---
+spring:
+  profiles: docker
+  data:
+      cassandra:
+          keyspace-name: adly
+          port: 9042
+          contact-points: ${DOCKER_IP:192.168.99.100}
+  rabbitmq:
+      addresses: rabbit:5672
+  cloud:
+      stream:
+        bindings:
+          input:
+            destination: beacons.exchange
+            group: beacons-device
+            durableSubscription: true
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://${DOCKER_IP:192.168.99.100}:9191/uaa/user
+    client:
+      accessTokenUri: http://${DOCKER_IP:192.168.99.100}:9191/uaa/oauth/token
+eureka:
+   client:
+      serviceUrl:
+        defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
+   instance:
+      prefer-ip-address: true
