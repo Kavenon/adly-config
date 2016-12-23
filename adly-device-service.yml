@@ -38,12 +38,12 @@ security:
 spring:
   profiles: docker
   data:
-      cassandra:
-          keyspace-name: adly
-          port: 9042
-          contact-points: ${DOCKER_IP:192.168.99.100}
+    cassandra:
+      keyspace-name: adly
+      port: 9042
+      contact-points: ${DOCKER_IP:192.168.99.100}
   rabbitmq:
-      addresses: rabbit:5672
+    addresses: rabbit:5672
   cloud:
       stream:
         bindings:
