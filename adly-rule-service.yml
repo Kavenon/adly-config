@@ -15,20 +15,20 @@ spring:
 
 ---
 spring:
-  profiles: development
+   profiles: development
    datasource:
       url: jdbc:postgresql://localhost:5432/adly
       username: adly
       password: adly
-    jpa:
+   jpa:
       hibernate:
         ddl-auto: update
-    data:
+   data:
       cassandra:
         keyspace-name: adly
         port: 9042
         contact-points: localhost
-    cloud:
+   cloud:
       stream:
         bindings:
           input:
