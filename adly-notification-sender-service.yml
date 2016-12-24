@@ -47,18 +47,18 @@ security:
 ---
 spring:
   profiles: docker
-    data:
-      cassandra:
-        keyspace-name: adly
-        port: 9042
-        contact-points: ${DOCKER_IP:192.168.99.100}
-     cloud:
-        stream:
-          bindings:
-            input:
-              destination: notifications
-              group: notifications-group
-              durableSubscription: true
+  data:
+    cassandra:
+      keyspace-name: adly
+      port: 9042
+      contact-points: ${DOCKER_IP:192.168.99.100}
+   cloud:
+      stream:
+        bindings:
+          input:
+            destination: notifications
+            group: notifications-group
+            durableSubscription: true
 security:
   oauth2:
     resource:

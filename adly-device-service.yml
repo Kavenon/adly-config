@@ -45,12 +45,12 @@ spring:
   rabbitmq:
     addresses: rabbit:5672
   cloud:
-      stream:
-        bindings:
-          input:
-            destination: beacons.exchange
-            group: beacons-device
-            durableSubscription: true
+    stream:
+      bindings:
+        input:
+          destination: beacons.exchange
+          group: beacons-device
+          durableSubscription: true
 security:
   oauth2:
     resource:
