@@ -52,13 +52,13 @@ spring:
       keyspace-name: adly
       port: 9042
       contact-points: ${DOCKER_IP:192.168.99.100}
-   cloud:
-      stream:
-        bindings:
-          input:
-            destination: notifications
-            group: notifications-group
-            durableSubscription: true
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: notifications
+          group: notifications-group
+          durableSubscription: true
 security:
   oauth2:
     resource:
