@@ -25,6 +25,15 @@ zuul:
           stripPrefix: false
           serviceId: adly-rule-service
           sensitiveHeaders:
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+ribbon:
+  ReadTimeout: 100000
+  ConnectTimeout: 100000
 ---
 spring:
   profiles: docker
@@ -32,8 +41,5 @@ eureka:
    client:
       serviceUrl:
         defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
-   server:
-      response-cache-update-interval-ms: 500
-      eviction-interval-timer-in-ms: 500
    instance:
       prefer-ip-address: true
