@@ -8,6 +8,7 @@ security:
       clientSecret: internal-secret
       grant-type: client_credentials
       scope: server
+  ignored: /profile/survey/response,/profile/survey/client
 
 spring:
   profiles:
@@ -35,6 +36,7 @@ security:
       userInfoUri: http://localhost:9191/uaa/user
     client:
       accessTokenUri: http://localhost:9191/uaa/oauth/token
+
 
 ---
 spring:
