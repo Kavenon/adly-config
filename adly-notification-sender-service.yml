@@ -74,4 +74,10 @@ eureka:
    instance:
       prefer-ip-address: true
 
-
+fcm:
+  endpoint: gcm.googleapis.com
+  port: 5236
+  sender:
+    id: 42996188329
+  api:
+    key: AIzaSyCgHMhZMDZtJjuajw4kLu36_RgSED5GlKg
