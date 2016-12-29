@@ -15,6 +15,7 @@ security:
       clientSecret: internal-secret
       grant-type: client_credentials
       scope: server
+  ignored: /rule/notification/payload/**
 
 spring:
   profiles:
