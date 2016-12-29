@@ -85,6 +85,11 @@ eureka:
    client:
       serviceUrl:
         defaultZone: http://${DOCKER_IP:192.168.99.100}:8761/eureka/
+      initial-instance-info-replication-interval-seconds: 0
+      instance-info-replication-interval-seconds: 1
+      registry-fetch-interval-seconds: 1
    instance:
       prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 1
+      lease-expiration-duration-in-seconds: 2
 
