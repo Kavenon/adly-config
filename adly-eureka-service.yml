@@ -1,6 +1,13 @@
 server:
   port: ${PORT:8761}
 
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
 eureka:
   client:
     register-with-eureka: false
